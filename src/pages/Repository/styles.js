@@ -134,7 +134,9 @@ export const IssueFilter = styled.ul`
   }
 `;
 
-export const IssuePaginator = styled.div`
+export const IssuePaginator = styled.div.attrs(props => ({
+  disabled: props.firstPage,
+}))`
   flex: 1;
   list-style: none;
   display: flex;
@@ -151,6 +153,15 @@ export const IssuePaginator = styled.div`
       align-items: center;
       &:hover {
         color: #7159c1;
+      }
+    }
+  }
+
+  span:nth-child(1) {
+    button {
+      &[disabled] {
+        cursor: not-allowed;
+        opacity: 0.6;
       }
     }
   }

@@ -160,7 +160,7 @@ export default class Repository extends Component {
             </li>
           ))}
         </IssueList>
-        <IssuePaginator>
+        <IssuePaginator firstPage={currentPage === 1}>
           <span>
             <button type="button" onClick={() => this.previousPage()}>
               <FaArrowLeft size={14} />
